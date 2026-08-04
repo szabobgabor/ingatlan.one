@@ -16,10 +16,10 @@ class PropertyController
         private ContactSidebar $contactSidebar
     )
     {}
-    public function __invoke(): string
+    public function __invoke(string $propertyId): string
     {
         return $this->view->render(__DIR__, 'property', [
-            'property' => ($this->getProperty)(),
+            'property' => ($this->getProperty)($propertyId),
             'contact' => ($this->contactSidebar)(),
         ]);
     }

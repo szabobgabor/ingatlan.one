@@ -28,7 +28,7 @@
     </a>
     <div class="slogan">
         Minden jó döntés <wbr />
-        egy jó kérdéssel kezdődik.
+        egy kérdéssel kezdődik.
     </div>
 </header>
 

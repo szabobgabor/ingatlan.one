@@ -303,29 +303,51 @@ main{
         position: sticky;
         top: 2rem;
         display: grid;
-        grid-template-columns: 6rem 1fr;
+        grid-template-columns: 1fr;
         grid-template-areas:
-                "title title"
-                "image phone";
+                "title"
+                "image"
+                "phone"
+                "email";
         width: 22rem;
+        gap: 1rem;
         h2{
             font-size: 1.3rem;
             grid-area: title;
             margin: 0 0 0.75rem;
+            text-align: center;
         }
-        img{
+        img {
             grid-area: image;
-            width: 5rem;
-            height: 5rem;
+            width: 8rem;
+            height: 8rem;
             border-radius: 50%;
             vertical-align: middle;
-            margin-right: 1rem;
+            margin: auto;
         }
-        .tel{
-            grid-area: phone;
+        .tel, .email {
             font-size: 1.2rem;
-            line-height: 1.5rem;
-            color: #006648;
+            line-height: 2rem;
+            color: #fff;
+            display: block;
+            background-color: #006648;
+            border-radius: 0.5rem;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            text-align: center;
+            margin: 0 1rem;
+        }
+        .tel {
+            grid-area: phone;
+        }
+        .email {
+            grid-area: email;
+        }
+        svg {
+            font-size: 1.1rem;
+            vertical-align: middle;
+            margin-right: 0.5rem;
+            line-height: 2.2rem;
         }
 
     }

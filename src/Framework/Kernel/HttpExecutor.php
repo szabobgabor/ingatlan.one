@@ -40,15 +40,13 @@ class HttpExecutor implements RequestHandlerInterface {
         $response->getBody()->write($responseFormat->normalize($result));*/
         $mainLayout = $this->container->get(Main::class);
 
-        switch(trim($request->getUri()->getPath(),'/')) {
-            case 'i':
-                $property = $this->container->get(PropertyController::class);
-                $contents = $property();
-                break;
-            default:
-                $article = $this->container->get(ArticleController::class);
-                $contents = $article();
-                break;
+        $path = trim($request->getUri()->getPath(),'/');
+        if (preg_match('/^M\d{6}$/', $path)) {
+            $property = $this->container->get(PropertyController::class);
+            $contents = $property($path);
+        } else {
+            $article = $this->container->get(ArticleController::class);
+            $contents = $article();
         }
 
         $response->getBody()->write($mainLayout($contents));
