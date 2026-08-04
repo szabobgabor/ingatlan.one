@@ -1,0 +1,55 @@
+name: "ingatlan.one"
+services:
+  php-apache:
+    container_name: i1-php-apache
+    build:
+      context: ../
+      dockerfile: .docker/php.Dockerfile
+    volumes:
+      - '../:/var/www'
+    working_dir: /var/www/public
+    restart: unless-stopped
+    ports:
+      - '80:80'
+    expose:
+      - '80'
+    user: www-data
+    depends_on:
+      composer:
+        condition: service_completed_successfully
+      db-mysql:
+        condition: service_started
+    environment:
+      MYSQL_HOST: 'db-mysql'
+      MYSQL_DATABASE: 'ingatlan1'
+      MYSQL_USER: 'ingatlan1'
+      MYSQL_PASSWORD: 'ingatlan1'
+      APACHE_DOCUMENT_ROOT: '/var/www/public'
+
+  composer:
+    container_name: i1-composer
+    image: composer
+    volumes:
+      - '../:/var/app'
+    command: composer update --ignore-platform-reqs --no-scripts
+    working_dir: /var/app
+    restart: "no"
+
+  db-mysql:
+    container_name: i1-db-mysql
+    image: mysql:8
+    volumes:
+      - db-mysql:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'ingatlan1'
+      MYSQL_USER: 'ingatlan1'
+      MYSQL_PASSWORD: 'ingatlan1'
+      MYSQL_ROOT_PASSWORD: 'secreting1'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+
+volumes:
+  db-mysql:

@@ -1,0 +1,336 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    color: #222;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    width: 75rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 auto 1rem;
+    .logo{
+        display: block;
+        margin: 1rem 1rem 1rem 0;
+        stroke-width: 1.4rem;
+        stroke-linecap: round;
+        width: 3rem;
+        stroke: #cecece;
+        .one {
+            stroke: #006648;
+        }
+    }
+    .slogan {
+        font-size: 2.2rem;
+        color: #006648;
+        font-weight: bold;
+        line-height: 3rem;
+    }
+}
+
+main{
+    flex: 1;
+}
+
+.article-container, .property-container{
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+.property-container{
+    h2{
+        font-size: 2.1rem;
+        margin: 2rem 0 1.5rem;
+    }
+    h3{
+        font-size: 1.9rem;
+        margin: 2rem 0 1rem;
+    }
+    .hero{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas:
+            "title title"
+            "image price"
+            "image location"
+            "image features"
+            "image ."
+            "summary summary";
+        column-gap: 2rem;
+        align-items: start;
+        align-content: start;
+        .image{
+            grid-area: image;
+            img{
+                width: 100%;
+                height: 28rem;
+                display: block;
+                object-fit: cover;
+            }
+        }
+        h1{
+            grid-area: title;
+            margin: 0 0 2rem;
+            font-size: 2.2rem;
+        }
+        h1::after{
+            content: "";
+            display: block;
+            width: 24rem;
+            height: 0.3rem;
+            background-color: #006648;
+            margin-top: 0.8rem;
+        }
+        .price{
+            font-size: 1.9rem;
+            grid-area: price;
+            text-align: center;
+            padding-top: 1rem;
+            font-weight: bold;
+            color: #006648;
+        }
+        .location{
+            grid-area: location;
+            font-size: 1.4rem;
+            text-align: center;
+            line-height: 3rem;
+            padding-bottom: 2rem;
+            svg {
+                width: 1.2rem;
+                height: 1.2rem;
+                vertical-align: baseline;
+            }
+        }
+        .features{
+            grid-area: features;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+
+            .card {
+                color: #006648;
+                background-color: #eee;
+                padding: 1rem 1rem 2rem;
+                border-radius: 0.5rem;
+                width: 8rem;
+                text-align: center;
+                font-size: 1.4rem;
+                font-weight: bold;
+                position: relative;
+                .label {
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    left: 1rem;
+                    width: 8rem;
+                    font-size: 1rem;
+                    text-align: center;
+                    line-height: 2rem;
+                    font-weight: normal;
+                    color: #222;
+                }
+
+            }
+        }
+        .summary{
+            position: relative;
+            margin: 4rem 0;
+            padding: 0 1rem 0 5rem;
+            line-height: 2rem;
+            font-size: 1.6rem;
+            font-style: italic;
+            grid-area: summary;
+        }
+        .summary::before {
+            content: "“";
+            position: absolute;
+            top: -0.5rem;
+            left: 1.5rem;
+            font-size: 5rem;
+            font-family: Georgia, serif;
+            color: #006648;
+            opacity: 0.15;
+            line-height: 1;
+        }
+    }
+    .property-details-layout {
+        .highlights {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.4rem;
+
+            .card {
+                font-size: 1.4rem;
+                background-color: #006648;
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: 0.5rem;
+
+                svg {
+                    width: 1.2rem;
+                    height: 1.2rem;
+                    vertical-align: baseline;
+                    margin-right: 0.5rem;
+                }
+            }
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+
+            img {
+                display: block;
+                height: 9rem;
+            }
+        }
+
+        .description {
+            font-size: 1.2rem;
+            line-height: 1.8rem;
+        }
+
+        .details {
+            container-type: inline-size;
+            column-width: 25rem;
+            column-gap: 1rem;
+
+            .block{
+                break-inside: avoid;
+                width: 24rem;
+
+                h3 {
+                    color: #006648;
+                    font-size: 1.4rem;
+                    margin: 0 0 1rem;
+
+                    svg {
+                        margin-right: 0.4rem;
+                        vertical-align: baseline;
+                    }
+                }
+
+                ul {
+                    margin: 0 auto 3rem 2rem;
+                    list-style: none;
+                    padding: 0;
+                    li {
+                        border-bottom: 1px solid #555;
+                        padding: 0.4rem 0;
+                        line-height: 1.5rem;
+
+                        .label {
+                            display: inline-block;
+                            width: 9rem;
+                            vertical-align: top;
+                        }
+
+                        .value {
+                            display: inline-block;
+                            width: 12rem;
+                            padding-left: 1rem;
+                            vertical-align: top;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .map{
+        img{
+            width: 100%;
+            height: 28rem;
+            display: block;
+            object-fit: cover;
+         }
+    }
+}
+
+.article-container {
+    p {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        margin: 0 0 1.2rem;
+    }
+
+    table {
+        border-collapse: collapse;
+        min-width: 45rem;
+        margin: 2rem auto;
+        font-size: 1.2rem;
+    }
+    th {
+        text-align: left;
+        padding: 0.5rem 1rem;
+        border-bottom: 2px solid #aaa;
+    }
+    td {
+        padding: 0.5rem 1rem;
+        border-bottom: 1px solid #ccc;
+    }
+    ul {
+        font-size: 1.2rem;
+        line-height: 2rem;
+        margin: 0 0 1.2rem;
+        list-style: disc;
+        padding-left: 2rem;
+    }
+}
+
+.sidebar-layout{
+    display: grid;
+    grid-template-columns: 1fr 22rem;
+    gap: 2rem;
+    grid-template-areas: "contents sidebar";
+    .sidebar{
+        grid-area: sidebar;
+    }
+    .contents{
+        grid-area: contents;
+    }
+    .contact {
+        position: sticky;
+        top: 2rem;
+        display: grid;
+        grid-template-columns: 6rem 1fr;
+        grid-template-areas:
+                "title title"
+                "image phone";
+        width: 22rem;
+        h2{
+            font-size: 1.3rem;
+            grid-area: title;
+            margin: 0 0 0.75rem;
+        }
+        img{
+            grid-area: image;
+            width: 5rem;
+            height: 5rem;
+            border-radius: 50%;
+            vertical-align: middle;
+            margin-right: 1rem;
+        }
+        .tel{
+            grid-area: phone;
+            font-size: 1.2rem;
+            line-height: 1.5rem;
+            color: #006648;
+        }
+
+    }
+}
+
+footer{
+    text-align: center;
+}
