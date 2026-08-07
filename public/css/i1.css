@@ -188,6 +188,7 @@ main{
         .gallery {
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
             gap: 1rem;
 
             img {
@@ -199,6 +200,9 @@ main{
         .description {
             font-size: 1.2rem;
             line-height: 1.8rem;
+            h2 {
+                font-size: 1.4rem;
+            }
         }
 
         .details {
