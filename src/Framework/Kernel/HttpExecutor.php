@@ -51,6 +51,8 @@ class HttpExecutor implements RequestHandlerInterface {
         } elseif ($path === '') {
             $home = $this->container->get(HomeController::class);
             $contents = $home();
+        } else {
+            $contents = '';
         }
 
         $response->getBody()->write($mainLayout($contents));

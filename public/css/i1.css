@@ -51,9 +51,9 @@ main{
         font-size: 1.2rem;
         line-height: 1.8rem;
     }
-    a {
-        color: #006648;
-    }
+}
+a {
+    color: #006648;
 }
 
 .property-container{
