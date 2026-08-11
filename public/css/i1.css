@@ -42,7 +42,7 @@ main{
 }
 
 .article-container, .property-container{
-    max-width: 75rem;
+    width: 75rem;
     margin: 0 auto;
 }
 
@@ -359,4 +359,134 @@ main{
 
 footer{
     text-align: center;
+}
+
+@media (max-width: 1256px) {
+    .article-container, .property-container, header{
+        width: 52rem;
+    }
+    .property-container {
+        .hero {
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "title title"
+                "price location"
+                "image image"
+                "features features"
+                "summary summary";
+            .features {
+                margin-top: 2rem;
+                justify-content: center;
+            }
+        }
+    }
+    .sidebar-layout {
+        grid-template-columns: 1fr;
+        grid-template-areas: "contents" "sidebar";
+
+        .contact {
+            position: static;
+            width: auto;
+            grid-template-columns: 1fr auto auto auto 1fr;
+            grid-template-areas: ". image phone email .";
+            gap: 0;
+            img {
+                width: 3rem;
+                height: 3rem;
+                margin: 0;
+            }
+            h2 {
+                display: none;
+            }
+        }
+        .sidebar{
+            position: sticky;
+            bottom: 0;
+            background-color: #fff;
+            padding: 1rem 0;
+        }
+    }
+}
+
+@media (max-width: 864px) {
+    .article-container, header{
+        width: auto;
+        margin: 0 1rem 1rem;
+    }
+    .property-container {
+        width: auto;
+        margin: 0;
+        .property-details-layout, .hero {
+            padding: 0 1rem;
+        }
+
+        .property-details-layout {
+            .details {
+                column-width: auto;
+                column-gap: 0;
+                .block {
+                    width: auto;
+                    ul > li > .label,ul > li > .value {
+                        width: 45%;
+                    }
+                }
+            }
+        }
+    }
+
+    .sidebar-layout {
+        .contact {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            width: 100%;
+            .tel, .email {
+                max-width: calc(50vw - 7rem);
+                flex-shrink: 1;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+
+    .article-container {
+        table {
+            min-width: auto;
+        }
+    }
+}
+
+@media (max-width: 608px) {
+    header .slogan {
+        font-size: 1.6rem;
+        line-height: 2rem;
+    }
+    .property-container {
+        .hero {
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                "title"
+                "price"
+                "location"
+                "image"
+                "features"
+                "summary";
+            h1 {
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+            }
+            .location {
+                padding-bottom: 1rem;
+            }
+            h1::after{
+                width: auto;
+            }
+        }
+    }
+}
+@media (max-width: 504px) {
+    html, body {
+        font-size: 14px;
+    }
 }
