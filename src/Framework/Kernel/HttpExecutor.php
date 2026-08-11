@@ -8,6 +8,7 @@ use App\Component\Action\HandlerMetadata;
 use App\Framework\View;
 use App\Middleware\Enum\ResponseFormat;
 use App\Presentation\Article\ArticleController;
+use App\Presentation\Home\HomeController;
 use App\Presentation\Layout\Main;
 use App\Presentation\Property\PropertyController;
 use Nyholm\Psr7\Response;
@@ -44,9 +45,12 @@ class HttpExecutor implements RequestHandlerInterface {
         if (preg_match('/^M\d{6}$/', $path)) {
             $property = $this->container->get(PropertyController::class);
             $contents = $property($path);
-        } else {
+        } elseif (preg_match('/^[a-z-]+$/', $path)) {
             $article = $this->container->get(ArticleController::class);
-            $contents = $article();
+            $contents = $article($path);
+        } elseif ($path === '') {
+            $home = $this->container->get(HomeController::class);
+            $contents = $home();
         }
 
         $response->getBody()->write($mainLayout($contents));

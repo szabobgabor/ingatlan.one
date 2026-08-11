@@ -15,10 +15,10 @@ class ArticleController {
     )
     {}
 
-    public function __invoke(): string
+    public function __invoke(string $articleSlug): string
     {
         return $this->view->render(__DIR__, 'article', [
-            'article' => ($this->getArticle)(),
+            'article' => ($this->getArticle)($articleSlug),
             'contact' => ($this->contactSidebar)(),
         ]);
     }

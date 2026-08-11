@@ -15,9 +15,13 @@ class GetArticle {
     )
     {}
 
-    public function __invoke(): ArticleViewModel
+    public function __invoke(string $slug): ArticleViewModel
     {
-        $markdown = file_get_contents($this->path->getPath('data/articles/alberlet-vagy-sajat-lakas.md'));
+        $articleSource = $this->path->getPath('data/articles/'.$slug.'.md');
+        if (!file_exists($articleSource)) {
+            throw new \RuntimeException('Article not found');
+        }
+        $markdown = file_get_contents($articleSource);
         return new ArticleViewModel('title', $this->markdownRenderer->render($markdown));
     }
 }

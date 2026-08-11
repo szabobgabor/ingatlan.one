@@ -41,9 +41,19 @@ main{
     flex: 1;
 }
 
-.article-container, .property-container{
+.article-container, .property-container, .home-container{
     width: 75rem;
     margin: 0 auto;
+}
+
+.home-container{
+    p, ul{
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+    }
+    a {
+        color: #006648;
+    }
 }
 
 .property-container{
@@ -362,7 +372,7 @@ footer{
 }
 
 @media (max-width: 1256px) {
-    .article-container, .property-container, header{
+    .article-container, .property-container, .home-container, header{
         width: 52rem;
     }
     .property-container {
@@ -409,7 +419,7 @@ footer{
 }
 
 @media (max-width: 864px) {
-    .article-container, header{
+    .article-container, .home-container, header{
         width: auto;
         margin: 0 1rem 1rem;
     }
