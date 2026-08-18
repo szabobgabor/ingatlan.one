@@ -3,7 +3,7 @@
 /* @var string $contact */
 ?>
 
-<article class="property-container">
+<article class="container property-container">
     <section class="hero">
         <h1><?= $property->title ?></h1>
         <section class="image" id="property-main-image">

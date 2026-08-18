@@ -2,7 +2,7 @@
 /* @var string $contact */
 ?>
 
-<div class="home-container sidebar-layout">
+<div class="container home-container sidebar-layout">
     <div class="sidebar">
         <?= $contact ?>
     </div>
