@@ -79,7 +79,7 @@
                         <span class="comment">
                             Az itt látható szám pusztán egy matematikai képlet alapján számolt összeg, SEMMIFÉLE BANKI
                             AJÁNLAT NINCS MÖGÖTTE, ellenben a matematika elég konok dolog, a hitelösszeg, a futamidő és
-                            a THM egy konkrét hitel esetén is nagyon hasonló számot fog generálni
+                            a THM egy konkrét hitel esetén is nagyon hasonló számot fog eredményezni.
                         </span>
                     </div>
                 </dl>
@@ -137,53 +137,48 @@
 
         <i data-lucide="arrow-big-down" class="results-separator"></i>
 
-        <div class="scenario" id="rental-scenario">
-            <h2>Albérlet bérlésére</h2>
-            <dl>
-                <div>
-                    <dt>Vizsgált időszak alatti albérletre kifizetett összeg (éves inflációval emelt)</dt>
-                    <dd class="rental-total-amount"></dd>
-                </div>
-                <div>
-                    <dt>Kezdőtőke + kamat hozam</dt>
-                    <dd class="investment-total-amount"></dd>
-                </div>
-                <div class="break"></div>
+        <div class="results">
+            <div class="scenario" id="rental-scenario">
+                <h2>Albérlet bérlésére</h2>
                 <div class="outcome">
+                    <dl>
+                        <dt>Záró vagyon</dt>
+                        <dd class="final-net-worth"></dd>
+                    </dl>
+                </div>
+                <div class="details">
+                    <dl>
+                        <dt>Vizsgált időszak alatti albérletre kifizetett összeg (éves inflációval emelt)</dt>
+                        <dd class="rental-total-amount"></dd>
+                        <dt>Kezdőtőke + kamat hozam</dt>
+                        <dd class="investment-total-amount"></dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="scenario" id="loan-scenario">
+            <h2>Hitelfelvétel</h2>
+
+            <div class="outcome">
+                <dl>
                     <dt>Záró vagyon</dt>
                     <dd class="final-net-worth"></dd>
-                </div>
-            </dl>
-        </div>
-        <div class="scenario" id="loan-scenario">
-            <h2>Hitelfelvétel</h2>
-            <dl>
-                <div>
+                </dl>
+            </div>
+            <div class="details">
+                <dl>
                     <dt>Ingatlan értéke</dt>
                     <dd class="property-value"></dd>
-                </div>
-                <div>
                     <dt>Vagyonszerzési illeték</dt>
                     <dd class="transfer-tax"></dd>
-                </div>
-                <div>
                     <dt>Fennmaradó tőketartozás</dt>
                     <dd class="remaining-principal"></dd>
-                </div>
-                <div>
                     <dt>Ingatlan által termelt bevétel (ingatlan kiadás - ingatlan felújítás -- inflációval korrigálva)</dt>
                     <dd class="property-income"></dd>
-                </div>
-                <div>
                     <dt>Vizsgált időszak hiteltörlesztése</dt>
                     <dd class="total-loan-payment"></dd>
-                </div>
-                <div class="break"></div>
-                <div class="outcome">
-                    <dt>Záró vagyon</dt>
-                    <dd class="final-net-worth"></dd>
-                </div>
-            </dl>
+                </dl>
+            </div>
+        </div>
         </div>
     </article>
 </div>

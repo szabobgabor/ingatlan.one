@@ -2,7 +2,7 @@
 return [
     'id' => 'M331220',
     'title' => 'Egyetem előtt álltok? Lehet, hogy ez okosabb döntés, mint egy albérlet.',
-    'price' => 49900000,
+    'price' => 47900000,
     'location' => 'Győr, Adyváros',
     'features' => [
         ['label' => 'alapterület', 'value' => '53 m<sup>2</sup>'],

@@ -3,7 +3,7 @@
 return [
     'id' => 'M334090',
     'title' => 'Egyetem Győrben? Lehet, hogy ez jobb döntés, mint évekig albérletet fizetni.',
-    'price' => 45990000,
+    'price' => 43900000,
     'location' => 'Győr, Nádorváros',
     'features' => [
         ['label' => 'alapterület', 'value' => '43 m<sup>2</sup>'],
