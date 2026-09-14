@@ -21,11 +21,11 @@ az idő múlásával az ingatlan értékének lesz egy növekedése (vagy hát p
 
 egy ingatlannak vannak költségei, bizonyos összeget ráfordítunk a felújítására, kötünk rá biztosítást.
 
-
+egy ingatlannak ugyanakkor van bevétele is, ez az ingatlan kiadásából származik. kiadhatjuk az egész ingatlant, vagy akár csak egy szobát.
 
 # Hitel
 
-a hitel kapcsán a cashflow-hoz kapcsolódó fogalom az a hiteltörlesztő mértéke. a törlesztés tőke és kamat mértéke.
+a hitel kapcsán a cashflow-hoz kapcsolódó fogalom az a hiteltörlesztő mértéke. a törlesztés tőke és kamat mértéke - ezeknek akkor lesz jelentősége, ha egy adott időszak eltelte után, végtörleszteni szeretnénk, ekkor a tőketartozást fizetjük ki, és és jó látni a kamatra kifizetett összeg mértékét is.
 
 nyilván van a hitelnek egy költsége, amit százalékosan szokás kifejezni.
 
@@ -34,3 +34,9 @@ van egy hitelösszeg.
 # Befektetés
 
 ha a meglévő megtakarításunkat nem költjük el, hanem befektetjük, annak van egy éves hozama.
+
+# Az összehasonlítás maga
+
+az összehasonlítás alapja az lesz, hogy egy meglévő megtakarításunkra lejátszuk mind az albérlet, mind ingatlanvásárlás esetén elképzelt forgatókönyveket, egy adott futamidőre (pl ha arra vagyunk kiváncsiak, hogy 5 év után hogyan dolgozik egyik és másik forgatókönyv)
+
+talán arra érdemes figyelni, hogy a cashflow kb azonos legyen. (tehát pl az albérlet díja és a hiteltörlesztő (kiadással csökkentett értéke, beszámítva a költségeket) kb egyenlőek legyenek..)

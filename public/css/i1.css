@@ -300,6 +300,12 @@ a {
         list-style: disc;
         padding-left: 2rem;
     }
+
+    .contents {
+        img {
+            max-width: 100%;
+        }
+    }
 }
 
 .sidebar-layout{
@@ -394,7 +400,7 @@ a {
     }
 
     .field, dl{
-        width: 18rem;
+        width: 21rem;
         background-color: rgba(0, 102, 72, 0.07);
         padding: 1rem;
         margin: 0;
@@ -415,6 +421,7 @@ a {
         display: block;
         font-size: .9rem;
         margin-top: .5rem;
+        color: #444;
     }
 
     .field {

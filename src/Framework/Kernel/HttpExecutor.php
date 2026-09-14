@@ -8,7 +8,7 @@ use App\Component\Action\HandlerMetadata;
 use App\Framework\View;
 use App\Middleware\Enum\ResponseFormat;
 use App\Presentation\Article\ArticleController;
-use App\Presentation\Calculator\CalculatorController;
+use App\Presentation\Calculator\Calculator;
 use App\Presentation\Home\HomeController;
 use App\Presentation\Layout\Main;
 use App\Presentation\Property\PropertyController;
@@ -46,9 +46,6 @@ class HttpExecutor implements RequestHandlerInterface {
         if (preg_match('/^M\d{6}$/', $path)) {
             $property = $this->container->get(PropertyController::class);
             $contents = $property($path);
-        } elseif ($path === 'calculator') {
-            $calculator = $this->container->get(CalculatorController::class);
-            $contents = $calculator();
         } elseif (preg_match('/^[a-z-]+$/', $path)) {
             $article = $this->container->get(ArticleController::class);
             $contents = $article($path);

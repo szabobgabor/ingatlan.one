@@ -61,6 +61,7 @@ function calculate() {
     rentalScenario.querySelector('.rental-total-amount').textContent = Math.round(rentalTotalAmount * -1).toLocaleString() + ' Ft';
     rentalScenario.querySelector('.investment-total-amount').textContent = Math.round(investment.finalAmount).toLocaleString() + ' Ft';
     rentalScenario.querySelector('.final-net-worth').textContent = (Math.round(investment.finalAmount) - Math.round(rentalTotalAmount)).toLocaleString() + ' Ft';
+    rentalScenario.querySelector('.monthly-net-outflow').textContent = monthlyRentalPrice.toLocaleString() + ' Ft';
 
     //property
     propertyInvestment = calculateCompoundInterest(parseFloat(propertyPrice.value) * 1_000_000, parseFloat(annuityForm.elements.annualPropertyAppreciationRate.value), calculationPeriod);
@@ -77,6 +78,7 @@ function calculate() {
     loanScenario.querySelector('.property-income').textContent = Math.round(propertyTotalIncome).toLocaleString() + ' Ft';
     loanScenario.querySelector('.total-loan-payment').textContent = (Math.round(loan.monthlyPayment) * calculationPeriod * 12 * -1).toLocaleString() + ' Ft';
     loanScenario.querySelector('.final-net-worth').textContent = (Math.round(propertyInvestment.finalAmount) - Math.round(transferTax) - Math.round(loan.schedule[(calculationPeriod * 12) - 1].remainingPrincipal) + Math.round(propertyTotalIncome) - (Math.round(loan.monthlyPayment) * calculationPeriod * 12)).toLocaleString() + ' Ft';
+    loanScenario.querySelector('.monthly-net-outflow').textContent = (Math.round(loan.monthlyPayment) - Math.round(propertyYearlyIncome / 12)).toLocaleString() + ' Ft';
 
 
 }
