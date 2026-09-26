@@ -11,7 +11,6 @@ return [
         ['label' => 'szobaszám', 'value' => '1+1'],
         ['label' => 'emelet', 'value' => '2'],
         ['label' => 'energetika', 'value' => 'D'],
-
     ],
     'quote' => 'Az első saját otthon sokszor jobb döntés, mint évekig albérletet fizetni.
 Egy jól megválasztott lakás nemcsak kényelmes otthon, hanem hosszú távon értékálló befektetés is.',

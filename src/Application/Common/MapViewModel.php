@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace App\Application\Common;
 
+use App\Domain\Location\LocationData;
+use App\Domain\Location\MapData;
+
 readonly class MapViewModel {
     public function __construct(
         public string $url,
@@ -18,6 +21,15 @@ readonly class MapViewModel {
             $data['url'],
             $data['imgSrc'],
             $data['imgAlt'],
+        );
+    }
+
+    public static function createFromMapData(MapData $map): self
+    {
+        return new self(
+            $map->url,
+            $map->imgSrc,
+            $map->imgAlt,
         );
     }
 }

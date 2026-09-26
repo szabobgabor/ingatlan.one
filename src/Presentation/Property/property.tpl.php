@@ -10,13 +10,13 @@
             <img src="<?= $property->mainImage->src ?>" alt="<?= $property->mainImage->alt ?>" />
         </section>
         <section class="price">
-            <?= number_format($property->price, 0, ',', ' ') ?> Ft
+            <?= $property->price ?>
         </section>
         <section class="location">
             <i data-lucide="map-pin"></i> <?= $property->location ?>
         </section>
         <section class="features">
-            <?php foreach($property->getFeatures() as $feature): ?>
+            <?php foreach($property->features as $feature): ?>
                 <div class="card">
                     <?= $feature->value ?>
                     <span class="label"><?= $feature->label ?></span>
@@ -33,7 +33,7 @@
         </div>
         <div class="contents">
             <section class="highlights">
-                <?php foreach($property->getHighlights() as $highlight): ?>
+                <?php foreach($property->highlights as $highlight): ?>
                     <div class="card">
                         <i data-lucide="<?= $highlight->icon ?>"></i>
                         <?= $highlight->value ?>
@@ -42,7 +42,7 @@
             </section>
             <h2>Képek az ingatlanról</h2>
             <section class="gallery" id="property-gallery">
-                <?php foreach($property->getGallery() as $galleryItem): ?>
+                <?php foreach($property->gallery as $galleryItem): ?>
                     <a href="<?= $galleryItem->src ?>"
                        data-pswp-width="<?= $galleryItem->width ?>"
                        data-pswp-height="<?= $galleryItem->height ?>">
@@ -55,11 +55,11 @@
                 <?= $property->description ?>
             </section>
             <section class="details">
-                <?php foreach($property->getDetails() as $detail): ?>
+                <?php foreach($property->details as $detail): ?>
                     <div class="block">
                         <h3><i data-lucide="<?= $detail->icon ?>"></i><?= $detail->title ?></h3>
                         <ul>
-                            <?php foreach($detail->getItems() as $item): ?>
+                            <?php foreach($detail->items as $item): ?>
                                 <li><span class="label"><?= $item->label ?></span><span class="value"><?= $item->value ?></span></li>
                             <?php endforeach; ?>
                         </ul>

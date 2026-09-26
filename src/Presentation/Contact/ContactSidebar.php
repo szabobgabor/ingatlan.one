@@ -9,7 +9,7 @@ use App\Framework\View;
 class ContactSidebar
 {
     public function __construct(
-        private View $view
+        private readonly View $view
     )
     {}
 

@@ -26,11 +26,14 @@ class GetArticle {
         $contents = $this->markdownRenderer->render($markdown);
 
         if (preg_match('/<!-- component:([^ ]+) -->/', $contents, $matches)) {
-            $componentName = $matches[1];
+            $definition = explode(':', $matches[1]);
+            $componentName = $definition[0];
+            $rawArguments = $definition[1] ?? '';
+            $arguments = $rawArguments === '' ? [] : explode('|', $rawArguments);
             $class = 'App\Presentation\\'.$componentName;
             if (class_exists($class)) {
                 $component = $this->container->get($class);
-                $contents = str_replace($matches[0], $component(), $contents);
+                $contents = str_replace($matches[0], $component(...$arguments), $contents);
             }
         }
 

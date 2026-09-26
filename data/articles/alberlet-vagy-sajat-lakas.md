@@ -156,9 +156,11 @@ Az alábbi ingatlanokat kifejezetten olyan szempontok alapján válogattam össz
 
 Az alábbi lakások jelenleg elérhetők, és a fenti szempontok alapján érdemes lehet őket közelebbről is megnézni:
 
+<!-- component:Property\RelatedProperties:panel -->
+
 * [Győr, Adyváros - Kodály Zoltán utca - 49,9 MFt](/M331220)
 * [Győr, Adyváros - Ifjúság körút - 44,9 MFt](/M320667)
 * [Győr, Adyváros - Kassák Lajos utca - 44,9 MFt](/M332390)
 * [Győr, Nádorváros - Török István utca - 49,9 MFt](/M332485)
-* [Győr, Ná>dorváros - Szabolcska utca - 45,99 MFt](/M334090)
+* [Győr, Nádorváros - Szabolcska utca - 45,99 MFt](/M334090)
 
