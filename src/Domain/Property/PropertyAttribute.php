@@ -10,6 +10,7 @@ enum PropertyAttribute: string {
     case HIGHLIGHT = 'highlight';
     case VIEW = 'view';
     case BUILDING_FLOOR_COUNT = 'building_floor_count';
+    case BUILDING_APARTMENT_COUNT = 'building_apartment_count';
     case APARTMENTS_PER_FLOOR = 'apartments_per_floor';
     case COMFORT_LEVEL = 'comfort_level';
     case HEATING = 'heating';
@@ -20,6 +21,7 @@ enum PropertyAttribute: string {
     case ROLLER_SHUTTER = 'roller_shutter';
     case STAIRWELL_TYPE = 'stairwell_type';
     case COMMON_COST = 'common_cost';
+    case HEATING_COST = 'heating_cost';
     case PARKING = 'parking';
     case FURNISHING = 'furnishing';
     case BUILT_IN_KITCHEN = 'built_in_kitchen';
@@ -30,8 +32,10 @@ enum PropertyAttribute: string {
             self::QUOTE => PropertyAttributeType::STRING,
 
             self::BUILDING_FLOOR_COUNT,
+            self::BUILDING_APARTMENT_COUNT,
             self::APARTMENTS_PER_FLOOR,
-            self::COMMON_COST => PropertyAttributeType::INT,
+            self::COMMON_COST,
+            self::HEATING_COST => PropertyAttributeType::INT,
 
             self::AIR_CONDITIONING,
             self::ROLLER_SHUTTER,
@@ -67,6 +71,7 @@ enum PropertyAttribute: string {
         return match ($this) {
             self::VIEW => 'Kilátás',
             self::BUILDING_FLOOR_COUNT => 'Emeletek száma az épületben',
+            self::BUILDING_APARTMENT_COUNT => 'Lakások száma az épületben',
             self::APARTMENTS_PER_FLOOR => 'Lakások száma az emeleten',
             self::COMFORT_LEVEL => 'Komfortfokozat',
             self::HEATING => 'Fűtés',
@@ -77,6 +82,7 @@ enum PropertyAttribute: string {
             self::ROLLER_SHUTTER => 'Redőny',
             self::STAIRWELL_TYPE => 'Lépcsőház típusa',
             self::COMMON_COST => 'Közös költség',
+            self::HEATING_COST => 'Fűtés költség',
             self::PARKING => 'Parkolás',
             self::FURNISHING => 'Bútorozottság',
             self::BUILT_IN_KITCHEN => 'Beépített konyhabútor',

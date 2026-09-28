@@ -20,7 +20,8 @@ class PropertyAttributeValueFormatter {
         $value = $property->getAttributeValue($attribute);
 
         return match ($attribute) {
-            PropertyAttribute::COMMON_COST => $this->priceFormatter->format($value),
+            PropertyAttribute::COMMON_COST,
+            PropertyAttribute::HEATING_COST => $this->priceFormatter->format($value),
             default => $this->defaultFormat($value),
         };
     }

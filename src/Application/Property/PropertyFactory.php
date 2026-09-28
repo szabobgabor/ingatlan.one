@@ -178,7 +178,7 @@ class PropertyFactory
                 $property->area !== null ? new LabelValueViewModel('Alapterület', $this->dimensionFormatter->area($property->area)) : null,
                 $property->landArea !== null ? new LabelValueViewModel('Telekterület', $this->dimensionFormatter->area($property->landArea)) : null,
                 $property->ceilingHeight !== null ? new LabelValueViewModel('Belmagasság', $this->dimensionFormatter->height($property->ceilingHeight)) : null,
-                ...$this->buildLabelValueViewModels($property, [PropertyAttribute::BUILDING_FLOOR_COUNT, PropertyAttribute::APARTMENTS_PER_FLOOR])
+                ...$this->buildLabelValueViewModels($property, [PropertyAttribute::BUILDING_FLOOR_COUNT, PropertyAttribute::BUILDING_APARTMENT_COUNT, PropertyAttribute::APARTMENTS_PER_FLOOR])
             ])
         );
         $roomDetails = new DetailGroupViewModel(
@@ -208,6 +208,7 @@ class PropertyFactory
             $this->buildLabelValueViewModels($property, [
                 PropertyAttribute::STAIRWELL_TYPE,
                 PropertyAttribute::COMMON_COST,
+                PropertyAttribute::HEATING_COST,
                 PropertyAttribute::PARKING,
                 PropertyAttribute::FURNISHING,
                 PropertyAttribute::BUILT_IN_KITCHEN,
