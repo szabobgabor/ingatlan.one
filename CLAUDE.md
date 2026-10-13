@@ -22,6 +22,7 @@ Ingatlan.One is a real estate showcase site (Hungarian market, Hungarian UI text
 - `Domain/`: data objects (`PropertyData`, `LocationData`, …) and many backed enums. Enums implement `Domain\LabeledEnum::label()` for Hungarian display labels (a stopgap until i18n). Property details are an open list of `PropertyAttributeData(PropertyAttribute::X, value)`.
 - `Application/`: one invokable use case per class (`GetProperty`, `GetArticle`, `GetRelatedProperties`), a `*Query` that loads domain data, and a `*Factory` that maps domain data to `*ViewModel`s. Presentation consumes only view models.
 - `Presentation/`: invokable controllers/components, each next to its `*.tpl.php` template. Templates are rendered with `Framework\View::render(__DIR__, 'name', [...])`, which `extract()`s the data array into plain PHP templates.
+- `Cli/`: invokable console commands (`__invoke(array $args): int`), registered in `config/cli/commands.php`. They parse arguments, call an Application use case and print the result.
 - `Infrastructure/`: adapters for `Application/Contract` interfaces.
 - `Framework/`: kernel, `View`, and `Path` (resolves paths relative to the project root; use it instead of `__DIR__` chains).
 
