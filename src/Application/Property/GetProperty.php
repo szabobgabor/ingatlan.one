@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace App\Application\Property;
 
-class GetProperty {
+class GetProperty
+{
     public function __construct(
         private readonly PropertyQuery $propertyQuery,
         private readonly PropertyFactory $propertyFactory,
