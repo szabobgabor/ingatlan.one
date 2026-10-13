@@ -4,20 +4,40 @@ declare(strict_types=1);
 
 namespace App\Framework\Kernel;
 
-use App\Framework\Path;
 use Psr\Container\ContainerInterface;
 
 class Console {
+    /**
+     * @param array<string, class-string> $commands command name => invokable class
+     */
     public function __construct(
-        private ContainerInterface $container,
-        private Path $path,
+        private readonly ContainerInterface $container,
+        private readonly array $commands,
     )
     {}
 
-    public function run(array $argv): void
+    public function run(array $argv): int
     {
-        echo "Hello World!\n";
-        $property = include ($this->path->getPath('data/properties/M334090.php'));
-        print_r($property);
+        $name = $argv[1] ?? null;
+        if ($name === null) {
+            $this->listCommands();
+            return 0;
+        }
+        if (!isset($this->commands[$name])) {
+            fwrite(STDERR, sprintf("Unknown command \"%s\"\n\n", $name));
+            $this->listCommands();
+            return 1;
+        }
+
+        $command = $this->container->get($this->commands[$name]);
+        return $command(array_slice($argv, 2));
+    }
+
+    private function listCommands(): void
+    {
+        echo "Available commands:\n";
+        foreach (array_keys($this->commands) as $name) {
+            echo '  '.$name."\n";
+        }
     }
 }

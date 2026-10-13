@@ -11,7 +11,7 @@ Ingatlan.One is a real estate showcase site (Hungarian market, Hungarian UI text
 - Dev environment (PHP 8.4 + Apache + Xdebug, MySQL 8, a one-shot composer container that runs `composer update`):
   `docker compose -f .docker/docker-compose.yml up -d --build`. The site is served at http://localhost (document root `public/`).
 - Shell into the PHP container: `docker exec -it i1-php-apache bash` (project mounted at `/var/www`).
-- CLI entry point: `php cli.php` (currently a debug stub in `src/Framework/Kernel/Console.php`).
+- CLI entry point: `php cli.php <command> [args]`. Commands are registered in `config/cli/commands.php` (name → invokable class resolved from the container, called as `__invoke(array $args): int`); without a command it lists them.
 - `phpunit` and `php-cs-fixer` are in `require-dev`, but there is no `tests/` directory or cs-fixer config yet.
 
 ## Architecture
